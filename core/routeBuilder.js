@@ -5,8 +5,11 @@ function routeBuilder() {
 
   function build(method) {
     return function internal(path, ...args) {
+      if (path[0] === '/') {
+        path = path.substring(1, path.length);
+      }
       const route = {};
-      route[method + ' ' + path] = args;
+      route[method + '|' + path] = args;
       routes.push(route);
       return this;
     };

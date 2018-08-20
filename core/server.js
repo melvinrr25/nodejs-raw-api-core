@@ -25,7 +25,7 @@ function server(request, response) {
     const parsedURL = parseURL(request.url);
     const bodyContent = Buffer.concat(body).toString();
     request.body = parseBody(bodyContent);
-    request.params = parsedURL.query;
+    request.queryParams = parsedURL.query;
     request.reqPath = parsedURL.pathname;
     response.on('error', error);
     // API handlers logic
