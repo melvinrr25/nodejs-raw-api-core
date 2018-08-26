@@ -12,7 +12,7 @@ const table = [{
   }),
   res: fake.responseObj(),
   routes: {
-    'GET /test': [
+    'GET|test': [
       (req, res) => res.resolve(),
       (req, res) => res.resolve(res.json(undefined, undefined)), [
         (req, res) => res.resolve(error)

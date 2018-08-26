@@ -12,12 +12,12 @@ const table = [{ in: routeBuilder
     .delete('/test2')
     .register(),
   out: {
-    'GET /test': [middleware],
-    'POST /test': [[middleware, middleware, middleware, [[[middleware]]]]],
-    'PUT /test': [middleware],
-    'PATCH /test': [[[[middleware]]]],
-    'DELETE /test': [middleware],
-    'DELETE /test2': [],
+    'GET|test': [middleware],
+    'POST|test': [[middleware, middleware, middleware, [[[middleware]]]]],
+    'PUT|test': [middleware],
+    'PATCH|test': [[[[middleware]]]],
+    'DELETE|test': [middleware],
+    'DELETE|test2': [],
   }
 }];
 
