@@ -1,5 +1,3 @@
-'use strict';
-
 const json = require('./json');
 const responseBuilder = require('./responseBuilder');
 const getRouteData = require('./getRouteData');

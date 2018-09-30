@@ -1,5 +1,3 @@
-'use strict';
-
 const tap = require('tap');
 const getRouteData = require('../../core/getRouteData');
 const builder = require('../../core/routeBuilder');

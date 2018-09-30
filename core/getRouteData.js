@@ -1,5 +1,3 @@
-'use strict';
-
 function getSplitUrl(url) {
   return url.split('/');
 }

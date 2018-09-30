@@ -1,5 +1,3 @@
-'use strict';
-
 const setupRouter = require('./router');
 const cors = require('./cors');
 const parseBody = require('./parseBody');

@@ -1,5 +1,3 @@
-'use strict';
-
 function parseBody(body) {
   try {
     return JSON.parse(body || '[]');

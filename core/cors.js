@@ -1,5 +1,3 @@
-'use strict';
-
 function cors(request, response) {
   const methods = 'OPTIONS, GET, PUT, POST, PATCH, DELETE';
   const headers = 'Content-Type, Authorization, Cache-Control, X-Requested-With';

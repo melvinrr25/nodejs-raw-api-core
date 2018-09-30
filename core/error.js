@@ -1,7 +1,4 @@
-'use strict';
-
 // const log = require('./log');
-
 function error(response) {
   return (error) => {
     // log(error);

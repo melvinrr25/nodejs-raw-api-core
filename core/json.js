@@ -1,5 +1,3 @@
-'use strict';
-
 function json(response) {
   return (responseData = {}) => {
     const code = responseData.code || 200;

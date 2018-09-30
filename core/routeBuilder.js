@@ -1,5 +1,3 @@
-'use strict';
-
 function routeBuilder() {
   let routes = [];
 
