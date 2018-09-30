@@ -39,10 +39,13 @@ function byRouteElementMatching(splitUrl) {
   }
 }
 
-function uniqRoute(splitUrl) {
+function uniqRoute(splitUrl, method, userRoutes) {
   return route => {
     let results = route.map(byRouteElementMatching(splitUrl));
-    if (results.indexOf(false) === -1) {
+    let key =  method + '|' + route.join('/');
+    let any = userRoutes[key];
+
+    if (results.indexOf(false) === -1 && any) {
       return route;
     }
   }
@@ -98,7 +101,7 @@ function getRouteData(method, requestPath, userRoutes) {
   let splitUrl = getSplitUrl(url);
   let route = splitRoutes
     .filter(byThoseMatchingLenght(splitUrl))
-    .find(uniqRoute(splitUrl));
+    .find(uniqRoute(splitUrl, method, userRoutes));
   return buildRouteData(method, route, userRoutes, splitUrl);
 }
 
