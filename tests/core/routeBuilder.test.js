@@ -4,6 +4,7 @@ const routeBuilder = require('../../core/routeBuilder');
 const middleware = () => null;
 
 const table = [{ in: routeBuilder
+    .get('/', middleware)
     .get('/test', middleware)
     .post('/test', [middleware, middleware, middleware, [[[middleware]]]])
     .put('/test', middleware)
@@ -12,6 +13,7 @@ const table = [{ in: routeBuilder
     .delete('/test2')
     .register(),
   out: {
+    'GET|': [middleware],
     'GET|test': [middleware],
     'POST|test': [[middleware, middleware, middleware, [[[middleware]]]]],
     'PUT|test': [middleware],

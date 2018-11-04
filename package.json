@@ -8,10 +8,10 @@
     "coverage": "npm t -- --coverage-report=html --jobs 5"
   },
   "dependencies": {
-    "mongoose": "^5.2.5"
+    "mongoose": "5.2.5"
   },
   "devDependencies": {
-    "dotenv": "^6.0.0",
+    "dotenv": "6.0.0",
     "tap": "11.0.1"
   },
   "keywords": [],
