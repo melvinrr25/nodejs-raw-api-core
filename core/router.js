@@ -2,7 +2,6 @@ const json = require('./json');
 const responseBuilder = require('./responseBuilder');
 const getRouteData = require('./getRouteData');
 const errorHandler = require('./error');
-const log = require('./log');
 const resolve = require('./resolve');
 const fn = () => {};
 

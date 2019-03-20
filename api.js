@@ -1,6 +1,6 @@
 const runServer = require('./core/runServer');
 
 runServer({
-  port: 8080,
+  port: 3000,
   useDatabase: false
 });

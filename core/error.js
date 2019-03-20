@@ -1,7 +1,5 @@
-// const log = require('./log');
 function error(response) {
   return (error) => {
-    // log(error);
     if (error && error instanceof Error) {
       response.statusCode = error.status || 500;
       response.setHeader('Content-Type', 'application/json');
