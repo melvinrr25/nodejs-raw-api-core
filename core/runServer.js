@@ -6,6 +6,7 @@ function runServer(settings = {}) {
   const port = settings.port;
   const useDatabase = settings.useDatabase;
   const test = settings.test;
+  const routes = settings.routes || {};
 
   if (useDatabase === true) {
     const mongoose = require("mongoose");
@@ -25,7 +26,7 @@ function runServer(settings = {}) {
     db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
     db.on("connected", () => {
-      createServer(port, test);
+      createServer(routes, port, test);
     });
 
     db.on("disconnected", () => {
@@ -33,12 +34,12 @@ function runServer(settings = {}) {
     });
   } else {
     // Without connecting to mongoose
-    createServer(port, test);
+    createServer(routes, port, test);
   }
 }
 
-function createServer(port, test) {
-  const httpServer = http.createServer(appServer);
+function createServer(routes, port, test) {
+  const httpServer = http.createServer(appServer(routes));
 
   if (!test) {
     httpServer.listen(port);

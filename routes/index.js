@@ -1,6 +1,6 @@
-const builder = require('../core/routeBuilder');
+const router = require('../core/routeBuilder');
 
-let userRoutes = builder
+let userRoutes = router
   .get('/', (req, res) => res.resolve(res.json({ appName: "NodeJs raw api." }, 200)))
   .get('/test', (req, res) => res.resolve(res.json({ test: "Working!" }, 200)))
   .register();
