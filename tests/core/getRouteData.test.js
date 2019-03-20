@@ -4,6 +4,7 @@ const builder = require('../../core/routeBuilder');
 const fn = () => null;
 
 let testRoutes = builder
+  .withMiddlewares(fn)
   .get('test/:id', fn)
   .get('report/:id/date/:date', fn)
   .get('/test/test2/test3', [fn])
