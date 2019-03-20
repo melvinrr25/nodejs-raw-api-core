@@ -7,6 +7,7 @@ const table = [{
     port: 30001,
     useDatabase: false,
     test: true,
+    routes: {},
   },
   out: undefined
 }];

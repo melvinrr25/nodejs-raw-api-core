@@ -15,7 +15,7 @@ const table = [{
 }];
 
 function each(item) {
-  const actual = server(item.req, item.res);
+  const actual = server({})(item.req, item.res);
   tap.deepEqual(actual, item.out);
 }
 
