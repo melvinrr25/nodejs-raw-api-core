@@ -1,17 +1,15 @@
 {
-  "name": "api-raw",
+  "name": "nivlem",
   "version": "1.0.0",
-  "description": "",
+  "description": "Super simple nodejs API builder",
   "main": "api.js",
   "scripts": {
     "test": "tap tests/**/**/*.test.js tests/*.test.js",
     "coverage": "npm t -- --coverage-report=html --jobs 5"
   },
   "dependencies": {
-    "mongoose": "5.2.5"
   },
   "devDependencies": {
-    "dotenv": "6.0.0",
     "tap": "11.0.1"
   },
   "keywords": [],

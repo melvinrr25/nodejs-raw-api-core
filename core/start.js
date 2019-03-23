@@ -1,41 +1,11 @@
 const http = require("http");
 const appServer = require("./server");
-require("dotenv").config();
 
-function runServer(settings = {}) {
+function start(settings = {}) {
   const port = settings.port;
-  const useDatabase = settings.useDatabase;
   const test = settings.test;
   const routes = settings.routes || {};
-
-  if (useDatabase === true) {
-    const mongoose = require("mongoose");
-    const dbHost = process.env.DB_HOST;
-    const dbPort = process.env.DB_PORT;
-    const dbName = process.env.DB_NAME;
-    const mongoDB = `mongodb://${dbHost}:${dbPort}/${dbName}`;
-
-    mongoose.connect(mongoDB, {
-      useNewUrlParser: true
-    });
-
-    mongoose.Promise = global.Promise;
-
-    const db = mongoose.connection;
-
-    db.on("error", console.error.bind(console, "MongoDB connection error:"));
-
-    db.on("connected", () => {
-      createServer(routes, port, test);
-    });
-
-    db.on("disconnected", () => {
-      console.log("MongoDB disconnected...");
-    });
-  } else {
-    // Without connecting to mongoose
-    createServer(routes, port, test);
-  }
+  createServer(routes, port, test);
 }
 
 function createServer(routes, port, test) {
@@ -75,4 +45,4 @@ function createServer(routes, port, test) {
   }
 }
 
-module.exports = runServer;
+module.exports = start;
