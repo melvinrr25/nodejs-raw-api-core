@@ -7,10 +7,9 @@
     "test": "tap tests/**/**/*.test.js tests/*.test.js",
     "coverage": "npm t -- --coverage-report=html --jobs 5"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "tap": "11.0.1"
+    "tap": "14.10.6"
   },
   "keywords": [],
   "author": "",
