@@ -2,7 +2,7 @@
   "name": "nivlem",
   "version": "1.0.1",
   "description": "Super simple nodejs API builder",
-  "main": "api.js",
+  "main": "index.js",
   "scripts": {
     "test": "tap tests/**/**/*.test.js tests/*.test.js",
     "coverage": "npm t -- --coverage-report=html --jobs 5"
